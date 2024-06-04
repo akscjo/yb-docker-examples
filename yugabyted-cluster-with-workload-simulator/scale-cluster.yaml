@@ -18,6 +18,7 @@ services:
       - "7003:7000"
       - "9003:9000"
       - "5436:5433"
+      - "9045:9042"
     healthcheck:
       test: ["CMD", "/home/yugabyte/postgres/bin/pg_isready", "-h", "yugabyted-4.local"]
       interval: 10s
@@ -41,6 +42,7 @@ services:
       - "7004:7000"
       - "9004:9000"
       - "5437:5433"
+      - "9046:9042"
     depends_on:
       yugabyted-4:
         condition: service_healthy
@@ -67,6 +69,7 @@ services:
       - "7005:7000"
       - "9005:9000"
       - "5438:5433"
+      - "9047:9042"
     depends_on:
       yugabyted-5:
         condition: service_healthy
